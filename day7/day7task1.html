@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>home work</title>
+</head>
+<body>
+	Enter number:<input type="number" id="io">
+	<button onclick="io1()">Check my number</button>
+<script>
+	function io1() { 
+	var a =Math.floor(Math.random()*(10-1))+1;
+	var b=document.getElementById('io').value;
+	b=Number(b);
+	if(a==b) {alert('you are number matched with lucky number '+a);
+	}
+	else {alert('you are number not matched with lucky number '+a)}
+	}
+</script>
+</body>
+</html>

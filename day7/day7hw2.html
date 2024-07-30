@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Form Validation using a sample registration form</title>
+    <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+    <meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+    <link rel='stylesheet' href='day7jss.css' type='text/css' />
+    <script src="day7javascript.js"></script>
+    <style>
+        #error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body onload="document.registration.email.focus();">
+    <form name="registration" id="zaheer" onsubmit="return formValidation();">
+        <label for="email">Email:</label>
+        <input type="email" name="email" size="30" />
+        <input type="submit" value="Submit">
+        <div id="error-message"></div>
+    </form>
+</body>
+<script>
+function formValidation() {
+    var uemail = document.registration.email;
+    if (ValidateEmail(uemail)) {
+        return true;
+    }
+    return false;
+}
+
+function ValidateEmail(uemail) {
+    var mailformat = /^\d+\.[^\s@]*?@[^\s@]*?\.\w{2,5}$/;
+    var errorMessage = document.getElementById('error-message');
+    if (uemail.value.match(mailformat)) {
+        errorMessage.textContent = ''; // Clear any previous error message
+        return true;
+    } else {
+        errorMessage.textContent = 'You have entered an invalid email address!';
+        uemail.focus();
+        return false;
+    }
+}
+</script>
+</html>
