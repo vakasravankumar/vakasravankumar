@@ -1,0 +1,23 @@
+Day 10: MongoDB
+
+show dbs
+
+use balaji
+
+show collections
+db.createUser({user:"balaji",pwd:"1234",roles:["readwrite","dbAdmin"]});
+
+//new
+db.createUser({user:"balaji",pwd:"1234",roles:[{ role: "clusterAdmin", db: "admin" },
+                { role: "readAnyDatabase", db: "admin" },
+                "readWrite"]});
+
+db.createCollection('customers');
+
+show collections
+
+db.customers.insertOne({first_name:"balaji",last_name:"srinivasan",age:33});
+
+db.customers.find();
+
+db.customers.insertMany([{first_name:"mohan",last_name:"joseph",age:18},{first_name:"jeno",last_name:"williams",age:25},{first_name:"khan",last_name:"mohammad",age:15}]);
