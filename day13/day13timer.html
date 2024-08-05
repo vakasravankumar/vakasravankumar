@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timer Page</title>
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    alert('Time is up!');
+                    window.location.href = 'day13homework1.html'; 
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const oneMinute = 60;
+            const display = document.querySelector('#time');
+            startTimer(oneMinute, display);
+        };
+    </script>
+</head>
+<body class="parallax" style="background-image: url('https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1708450498/css_background_image_1/css_background_image_1-png?_i=AA' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;">
+    
+    <div style="text-align:center; padding: 100px;">
+        <h1 style="color: white;">Welcome! You have 1 minute</h1>
+        <div style="color: white;">Time remaining: <span id="time">01:00</span></div>
+    </div>
+
+
+</body>
+</html>

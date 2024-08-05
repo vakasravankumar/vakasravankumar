@@ -1,0 +1,14 @@
+db.student.aggregate([
+             { $match: { courses: { $in: ["MongoDB", "Php"] } } }])
+db.stats()
+db.student.aggregate( [
+  { $match: { $or: [ { marks: { $gt: 80, $lt: 90 } },
+ { age: { $gte: 24 } } ] } }
+] );
+
+db.createUser({user:"awesomeadmin",pwd:"123456",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})
+db.createRole({ role: "userAdminAnyDatabase", privileges: [ { resource: { db: "ciet", collection: "" }, actions: [ "find", "update", "insert", "remove" ] } ], roles: [] });db.getRoles()
+db.employees.find({dateOfBirth:{$gte:"1990-01-01"}});
+db.employees.find({dateOfBirth:{$gte:"1985-01-01",$lte:"1990-12-31"}});
+
+db.employees.find({dateOfBirth:{$regex:"-08-"}});
