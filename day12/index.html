@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>homework</title>
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
+<script src="https://amuze.in/dalmia-bharat/assets/popup/modernizr.custom.js"></script>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css'>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-shape-background-geometric-colorful-backdrop-abstract-layout-design_839051-1038.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721606400&semt=ais_user' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+  		<img src="data:image/png;base64,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" width="100" height="62">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" style="background:black;">Search</button>
+    </form>
+
+  </div>
+  </nav>
+   <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-shape-background-geometric-colorful-backdrop-abstract-layout-design_839051-1038.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721606400&semt=ais_user' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+
+  <div class="container-fluid p-5 my-5 text-white" style="background:teal;padding: 100px 90px;">
+	<div class="row">
+          <div class="col">
+            <h1 style="color:navy;">Transforming Engineering</h1>
+            <h1 style="color:navy;">Colleges in india.Creating</h1>
+            <h1 style="color:navy;">hope for students</h1>
+             <hr style="color:navy;position: relative;border: none;height: 5px;background: navy;">
+             <h1 style="color: teal;"> ghsvdcygevy</h1>   
+             <h6>By integrating curriculum,content and practical</h6>
+             <h6>learning to enhance students skills and awareness</h6>
+             <h6>on employability</h6>
+             <h4 style="background:teal;color: teal;">SSS</h4>
+             	<form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:black;color: black;color:whitesmoke;text-align: center;">BRING RECOGNISATION TO YOUR COLLEGE</button>
+        </form>
+          </div>
+           <div class="col" style="padding: 0px 0px 0px 50px;">
+          <img class="transitions" src="https://cdn.pixabay.com/photo/2021/10/11/04/08/university-6699377_640.jpg" height="350"></div>
+	</div>
+	</div>
+  </div>
+ 	  <div class="container-fluid p-5 my-5 text-white" style="background:olive;padding: 100px 90px;">
+ 	  	<div class="row">
+ 	  		<div class="col">
+ 	  		<h2 style="color:navy;">Improving students' learning</h2>
+ 	  		<h2 style="color:navy;">ability and skills to increase</h2>
+            <h2>their&nbsp&nbsp<b style="color:skyblue;">EMPLOYABILITY</b></h2>
+ 	  		<h2><b style="color:skyblue;">QUOTIENT</b></h2>
+ 	  		<hr style="color:navy;position: relative;border: none;height: 5px;background: navy;">
+ 	  		<p>
+ 	  			In a world where the success of students' college education lies in their chances of getting placed, colleges must move quickly to respond to the expectations of the industry and adopt new ways of imparting teaching and skilling their students. byteXL has the expertise to help colleges leverage technology, learning pedagogy and teaching methodologies to do just that.Regular Education Timeline Leading To Inadequate Employability byteXL
+ 	  		</p>
+ 	  		</div>
+ 	  		<div class="col">
+ 	  			<h3>
+ 	  				Regular Education Timeline Leading To Inadequate Employability
+ 	  			</h3>
+ 	  			<img src="https://www.bytexl.com/assets/images/graph1.jpg" height="500">
+ 	  		</div>
+ 	  		<div class="col">
+ 	  			<h3>
+						byteXL Influenced Education Timeline Leading to Employability 	  	
+				</h3>
+ 	  			<img src="https://www.bytexl.com/assets/images/graph2.jpg" height="500">
+ 	  		</div>
+ 	  	</div>
+ 	  </div>
+ 	  <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-shape-background-geometric-colorful-backdrop-abstract-layout-design_839051-1038.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721606400&semt=ais_user' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+ 	  <div class="container-fluid p-5 my-5 text-white" style="background:teal;padding: 100px 90px;">
+ 	  <h3>PROBLEMS WE ADDRESS</h3>
+    <div class="row" style="padding: 30px; background: whitesmoke; height: 100%;">
+      <div class="col" style="height: 30%; padding: 30px;">
+        <div class="card" style="height: 100%; padding: 30px;">
+          <a href="#" class="nav-link" style="border-color: whitesmoke; border-radius: 1px; background: white; width: 100%; height: 100%;">
+             <i class="fa fa-envelope-o" aria-hidden="true" style="color: skyblue; text-align: center; font-size: 50px; width: 100%; height: 100%;"></i>
+            <h5 class="Lorum ipsum" style="text-align: center; color: skyblue;">Applications</h5>
+          </a>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a longer card with supporting text.</p>
+        </div>
+      </div>
+      <div class="col" style="height: 30%; padding: 30px;">
+        <div class="card" style="height: 100%; padding: 30px;">
+          <a href="#" class="nav-link" style="border-color: whitesmoke; border-radius: 1px; background: white; width: 100%; height: 100%;">
+           <i class="fa fa-address-card" aria-hidden="true" style="color: skyblue; text-align: center; font-size: 50px; width: 100%; height: 100%;"></i>
+            <h5 class="Lorum ipsum" style="text-align: center; color: skyblue;">Address</h5>
+          </a>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a longer card with supporting text.</p>
+        </div>
+      </div>
+      <div class="col" style="height: 30%; padding: 30px;">
+        <div class="card" style="height: 100%; padding: 30px;">
+          <a href="#" class="nav-link" style="border-color: whitesmoke; border-radius: 1px; background: white; width: 100%; height: 100%;">
+            <i class="fa fa-recycle" aria-hidden="true" style="color: skyblue; text-align: center; font-size: 50px; width: 100%; height: 100%;"></i>
+            <h5 class="Lorum ipsum" style="text-align: center; color: skyblue;">Returns</h5>
+          </a>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a longer card with supporting text.</p>
+        </div>
+      </div>
+      <div class="col" style="height: 30%; padding: 30px;">
+        <div class="card" style="height: 100%; padding: 70px 0px 60px;background: #33C1FF;">
+          <a href="#" class="nav-link" style="border-color: whitesmoke; border-radius: 1px; background: white; width: 100%; height: 100%;">
+            <i class="fa fa-graduation-cap" aria-hidden="true" style="color: skyblue; text-align: center; font-size: 50px; width: 100%; height: 100%;"></i>
+            <h5 class="Lorum ipsum" style="text-align: center; color: skyblue;">TECH-ENABLED LEARNING</h5>
+          </a>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a longer card with supporting text.</p>
+        </div>
+      </div>
+    </div>
+ 	</div>
+ 	 <div class="parallax" style="background-image: url('https://thumbs.dreamstime.com/b/sunrise-dramatic-blue-sky-orange-sun-rays-breaking-clouds-nature-background-hope-concept-110818674.jpg' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+
+<div class="container-fluid p-5 my-5" style="background: white;height: 40%;">
+  <div class="row">
+    <div class="col" style="padding: 0px 0px 0px 20px">
+      <img class="transitions" src="https://www.bytexl.com/assets/images/img1.jpg" alt="Skills Image">
+    </div>
+    <div class="col" style="padding: 0px 20px 10px 0px;">
+        <h2 style="color:orange;">Our Integrated</h2>
+ 	  	<h2 style="color:orange;">Transformation Model</h2>
+ 	  	<hr style="color:navy;position: relative;border: none;height: 5px;background: navy;">
+ 	  	<h2 style="color:white;">Transformation Model</h2>
+ 	  	<h5>
+ 	  		Our integrated college transformation model seeks to empower students, facilitate their growth, and elevate the overall educational experience to meet the challenges of the modern world.EXPLORE OUR TRANSFORMAT.This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a longer card with supporting text.
+ 	  	</h5>
+ 	  	<h2 style="color:white;">Transformation Model</h2>
+ 	  	<form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">EXPLORE OUR TRANSFORMATION</button>
+        </form>
+ 	  	
+ 	  	
+  </div>
+</div>
+  <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-shape-background-geometric-colorful-backdrop-abstract-layout-design_839051-1038.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721606400&semt=ais_user' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+ 
+	<div class="container-fluid p-5 my-5" style="background:teal">
+		<div class="row">
+				<div class="card mb-3" style="max-width: 400px; height: 300px;">
+		 	 	<div class="row g-0">
+		    	<div class="col-md-8">
+		      	<div class="card-body">
+		        <h5 class="card-title" style="color:navy;">WE'LL help develop and deliver your transformation model </h5>
+		        <p class="card-text">Colleges across India are partnering with us to transform their teaching methodology and learning pedagogy in order to increase the employability quotient of their students.</p>
+		        
+		      </div>
+		    </div>
+		  </div>
+		  </div>
+		  <div class="col">
+		  		<div class="row" style="padding:0px 0px 60px 30px">
+		  			<div class="col"> <img class="transitions" src="https://www.bytexl.com/assets/images/colleges/005.jpg" height="60" width="150"></div>
+		  			<div class="col"><img class="transitions" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQBc6IZd83mRv-HWluGmf6PArtJlZwJZkwHw&s" height="60" width="150"></div>
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/001.jpg" height="60" width="150"></div>
+		  		</div>
+		  		<div class="row" style="padding:0px 0px 60px 30px">
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/007.jpg" height="60" width="150"></div>
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/008.jpg" height="60" width="150"></div>
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/003.jpg" height="60" width="150"></div>
+		  		</div>
+		  		<div class="row" style="padding:0px 0px 60px 30px">
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/002.jpg" height="60" width="150"></div>
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/004.jpg" height="60" width="150"></div>
+		  			<div class="col"><img class="transitions" src="https://www.bytexl.com/assets/images/colleges/009.jpg" height="60" width="150"></div>
+		  		</div>
+		  </div>
+		</div>
+</div>
+  <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-shape-background-geometric-colorful-backdrop-abstract-layout-design_839051-1038.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721606400&semt=ais_user' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+
+	<div class="container-fluid p-5 my-5 bg-white">
+		<h1 style="text-align:center;color: orange;">COLLEGE AND STUDENT TESTIMONIALS</h1>
+		 <hr style="color:navy;position: relative;border: none;height: 5px;background: navy;">
+		<h5 style="text-align:center;color: grey;">Our valuable customers affirm the value of our solution, and customer</h5>
+		<h5 style="text-align:center;color: grey;">satisfaction is our ultimate motto.</h5>
+<div class="scroll-container bg-white">
+  <video src="https://media.istockphoto.com/id/1486742049/video/complex-digital-structure-growing-endlessly-intricate-connection-lines-symbolizing-innovative.mp4?b=1&s=mp4-640x640-is&k=20&c=FZxCEeeoiq_mWwr912asn6mOAJWj8Ns7jsAHp1Cc5XM=" style="color:white;padding: 30px 20px;width: 700px;" controls>Pichai was born in Madurai, Tamil Nadu, India, to a Tamil Brahmin family. His mother, Lakshmi, was a stenographer, and his father, Regunatha Pichai, was an electrical engineer at GEC, the British conglomerate.</video>
+  <video src="https://media.istockphoto.com/id/1368541301/video/fast-flying-bright-blue-light-rays.mp4?b=1&s=mp4-640x640-is&k=20&c=VAWHemT_LfOt2T2Wkelb_vOf2yrFM366qEu6RhctOSI=" style="color:white;padding: 30px 20px;width: 700px;" controls >Pichai was born in Madurai, Tamil Nadu, India, to a Tamil Brahmin family. His mother, Lakshmi, was a stenographer, and his father, Regunatha Pichai, was an electrical engineer at GEC, the British conglomerate.</video>
+  <video src="https://media.istockphoto.com/id/1556389414/video/man-using-a-laptop-double-exposure-with-business-data-analytics-dashboard.mp4?b=1&s=mp4-640x640-is&k=20&c=MIelePhj1lLfbPmk0xqStHIrOflnoYSKzbVWKdAxVj8=" style="color:white;padding: 30px 20px;width: 700px;">Pichai was born in Madurai, Tamil Nadu, India, to a Tamil Brahmin family. His mother, Lakshmi, was a stenographer, and his father, Regunatha Pichai, was an electrical engineer at GEC, the British conglomerate.</video>
+  <video src="https://media.istockphoto.com/id/1136030413/video/engineers-meeting-in-technology-research-laboratory-engineers-scientists-and-developers.mp4?b=1&s=mp4-640x640-is&k=20&c=exeQA6YJtw0dAMTJ-6CKwAv6zXs0OO24QzPlNsCp57c=" style="color:white;padding: 30px 20px;width: 700px;">Pichai was born in Madurai, Tamil Nadu, India, to a Tamil Brahmin family. His mother, Lakshmi, was a stenographer, and his father, Regunatha Pichai, was an electrical engineer at GEC, the British conglomerate.</video>
+</div>
+
+	</div>
+	 
+	<div class="container-fluid p-5 my-5 bg-primary">
+		<h1 style="text-align:center;color: orange;">SPOTLIGHT</h1>
+		<hr style="color:navy;position: relative;border: none;height: 5px;background: white;">
+		<div class="row">
+			<div class="col" style="height: 500px; padding:0px 0px 0px 20px;width: 50%;">
+        <div class="card" style="height: 100%; padding: 30px;">
+          <img src="https://www.bytexl.com/assets/images/xlerate2.jpg">
+            <h1 class="Lorum ipsum" style="text-align: center; color: orange;">The XLerate Program</h1>
+          </a>
+          <h4 class="card-text">Created in partnership with Microsoft India, the program provides students with the right platform and the support system they need to successfully forge a career in tech.</h4>
+          <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:black;color: black;color:whitesmoke;text-align: center;">LEARN MORE</button>
+        </form>
+        </div>
+      </div>
+ 		 	<div class="col" style="height: 500px; padding: 0px 0px 0px 20px;width: 50%;">
+        <div class="card" style="height: 100%;">
+          <img src="https://www.bytexl.com/assets/images/byteXL-Platform.jpg">
+            <h1 class="Lorum ipsum" style="text-align: center; color: orange;">byteXL Platform</h1>
+          </a>
+          <h4 class="card-text">Our proprietary platform is equipped with an LMS, academic & skilling content, online editor, student reports, dashboards on individual college performance anything write  and coding challenges.</h4>
+          <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:black;color: black;color:whitesmoke;text-align: center;">LEARN MORE</button>
+        </form>
+        </div>
+		</div>
+	</div>
+</div>
+	<div class="container-fluid p-5 my-5 bg-white">
+		<h1 style="color:skyblue;text-align: center;">LATEST THINKING</h1>
+		<hr style="color:navy;position: relative;border: none;height: 5px;background: navy;">	
+		 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">1</button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2">2</button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3">3</button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div style="display: flex; justify-content: space-evenly;">
+			      		<div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/004.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">5-ways-edtech-companies-help-you-land-a-career-in-2022.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	Augest 22,2022
+        </h6>
+			  </div>
+			</div>
+			          <div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/005.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			     <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">our-story-why-we-decided-to-partner-with-colleges-to-upskill-youth-in-india.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	September 16,2022
+        </h6>
+			  </div>
+			</div>
+			<div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/006.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			     <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">our-mission-to-bring-learning-back-to-colleges-bring-learning-back-to-colleges.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	October 19,2022
+        </h6>
+			  </div>
+			</div>
+    </div>
+   </div> 
+    <div class="carousel-item">
+      <div style="display: flex; justify-content: space-evenly;">
+			      		<div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/Opportunities-for-colleges-to-adapt-to-a-fast-changing-tech-world.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">5-ways-edtech-companies-help-you-land-a-career-in-2022.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	Augest 22,2022
+        </h6>
+			  </div>
+			</div>
+			          <div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/002.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			     <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">our-story-why-we-decided-to-partner-with-colleges-to-upskill-youth-in-india.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	September 16,2022
+        </h6>
+			  </div>
+			</div>
+			<div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/003.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			     <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">our-mission-to-bring-learning-back-to-colleges-bring-learning-back-to-colleges.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	October 19,2022
+        </h6>
+			  </div>
+			</div>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <div style="display: flex; justify-content: space-evenly;">
+			      		<div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/002.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">5-ways-edtech-companies-help-you-land-a-career-in-2022.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	Augest 22,2022
+        </h6>
+			  </div>
+			</div>
+			          <div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/005.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			     <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">our-story-why-we-decided-to-partner-with-colleges-to-upskill-youth-in-india.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	September 16,2022
+        </h6>
+			  </div>
+			</div>
+			<div class="card" style="width: 18rem;">
+			  <img src="https://www.bytexl.com/assets/images/blogs/006.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			     <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:#33C1FF;color: black;text-align: center;">our-mission-to-bring-learning-back-to-colleges-bring-learning-back-to-colleges.php</button>
+        </form>
+        <h6 style="color:grey;text-align: center;">
+        	October 19,2022
+        </h6>
+			  </div>
+			</div>
+    </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+	</div>
+	<div class="container-fluid p-5 my-5 " style="background:teal;">
+		<h1 style="color:skyblue;text-align: center;">IN THE NEWS</h1>
+		<hr style="color:navy;position: relative;border: none;height: 5px;background: navy;">
+
+		<div class="row" style="display:flex;justify-content: space-evenly;">
+			<div class="col"> <img src="https://www.bytexl.com/assets/images/inthenews/TOI.jpg" width="220px" height="200px"> </div>
+			<div class="col"> <img src="https://www.bytexl.com/assets/images/inthenews/Ys.jpg" width="220px" height="200px"> </div>
+			<div class="col"> <img src="https://www.bytexl.com/assets/images/inthenews/Edt.jpg" width="220px" height="200px"> </div>
+			<div class="col">  <img src="https://www.bytexl.com/assets/images/inthenews/CNBC.jpg" width="220px" height="200px"> </div>
+		</div>
+		<h1 style="color:teal;">qbjw</h1>
+
+		<div class="row" style="display:flex;justify-content: space-evenly;">
+			<div class="col"> <img src="https://www.bytexl.com/assets/images/inthenews/ETR.jpg" width="220px" height="200px"> </div>
+			<div class="col"> <img src="https://www.bytexl.com/assets/images/inthenews/INC_42.jpg" width="220px" height="200px"> </div>
+			<div class="col"> <img src="https://www.bytexl.com/assets/images/inthenews/VCC.jpg" width="220px" height="200px"> </div>
+			<div class="col">  <img src="https://www.bytexl.com/assets/images/inthenews/CNN.jpg" width="220px" height="200px"> </div>
+		</div>
+	</div>
+<div class="container-fluid " style="background:white;padding: 100px 90px;">
+		<div class="row">
+          <div class="col">
+	            <h1 style="color:navy;">Got questions?</h1>
+	            <h1 style="color:navy;">We got the real answers.</h1>
+	            <h1 style="color:navy;">Let's connect.</h1>
+	             <p style="color: white;"> ghsvdcygevy</p>  
+	             <h4 style="color:grey;">We will answer your questions about how to engage with our transformation model and how to put your college on the path to success!</h4> 
+	             <p style="color: white;"> ghsvdcygevy</p>  
+	            <form >
+      <button class="btn btn-outline-success rounded" type="submit" style="background:skyblue;color:black;text-align: center;">CONTACT US</button>
+        </form>
+          </div>
+           <div class="col" style="padding: 20px 0px 0px 100px;">
+          <img class="transitions" src="https://www.bytexl.com/assets/images/letsConnect.jpg" width="500px" height="520px">
+      	  </div>
+</div>
+</div>
+		<div class="container-fluid p-5 my-5 " style="background: black;">
+  <!-- Footer -->
+				<footer class="text-center text-lg-start bg-body-tertiary text-muted" style="background: black;">
+				  <!-- Section: Social media -->
+				  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="background: black;">
+				    <!-- Left -->
+				    <div class="d-none d-lg-block" >
+				      <span>Get connected with us on our social networks:</span>
+				    </div>
+				    
+				  </section>
+				 
+				  <section class="" style="background: white;">
+				    <div class="container text-center text-md-start mt-5">
+				      <!-- Grid row -->
+				      <div class="row mt-3">
+				        <!-- Grid column -->
+				        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+				          <!-- Content -->
+				          <img src="https://www.bytexl.com/assets/images/logo.png">
+				    <p>© 2021 Copyright:
+				    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">BYTEXL.com</a></p>
+				        </div>
+				        <!-- Grid column -->
+
+				        <!-- Grid column -->
+				        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+				          <!-- Links -->
+				          <h5 class="text-uppercase fw-bold mb-4" style="color:orange;">sales@bytexl.in</h5>
+				          
+				          <p class="card-text"><small class="text-body-secondary"><i class="fa fa-linkedin-square rounded-circle" aria-hidden="true" style="font-size:25px"></i>&nbsp&nbsp<i class="fa fa-twitter rounded-circle" aria-hidden="true" style="font-size:25px"></i>&nbsp&nbsp<i class="fa fa-facebook-official rounded-circle" aria-hidden="true" style="font-size:25px"></i>&nbsp&nbsp
+				<i class="fa fa-instagram rounded-circle" aria-hidden="true" style="font-size:25px"></i>&nbsp&nbsp</small></p>
+				        </div>
+				        <!-- Grid column -->
+
+				        <!-- Grid column -->
+				        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+				          <!-- Links -->
+				          <h6 class="text-uppercase fw-bold mb-4" style="color:orange;">
+				            Useful links
+				          </h6>
+				          <p>
+				            <a href="#!" class="text-reset">Home</a>
+				          </p>
+				          <p>
+				            <a href="#!" class="text-reset">Pricing</a>
+				          </p>
+				          <p>
+				            <a href="#!" class="text-reset">Platform</a>
+				          </p>
+				          <p>
+				            <a href="#!" class="text-reset">Careers</a>
+				          </p>
+				          <p>
+				            <a href="#!" class="text-reset">Blogs</a>
+				          </p>
+				          <p>
+				            <a href="#!" class="text-reset">Settings</a>
+				          </p>
+				          <p>
+				            <a href="#!" class="text-reset">Help</a>
+				          </p>
+				        </div>
+				        <!-- Grid column -->
+
+				        <!-- Grid column -->
+				        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+				          <!-- Links -->
+				          <h6 class="text-uppercase fw-bold mb-4" style="color:orange;">HEADQUARTERS</h6>
+				          <p style="color:grey;">KP2 Associates Inc.,
+						4400 State HWY 121,
+						Suite # 300-0088,
+						Lewisville, TX 75056 USA</p>
+				          <p style="color:white;">,dsdcsd,,</p>
+				          <p style="color:grey;"><h6 class="text-uppercase fw-bold mb-4" style="color:orange;">REGISTERED OFFICE</h6>
+				          <p style="color:grey;">KP2 Associates Inc.,
+						4400 State HWY 121,
+						Suite # 300-0088,
+						Lewisville, TX 75056 USA</p></p>
+				        </div>
+				        <!-- Grid column -->
+				      </div>
+				      <!-- Grid row -->
+				    </div>
+				  </section>
+				  <!-- Section: Links  -->
+
+				  <!-- Copyright -->
+				  <div class="text-center p-4" style="background: white;">
+				    <p style="text-align:center;color: black;">Designed by SASHIPAVAN</p>
+
+				  </div>
+				  <!-- Copyright -->
+				</footer>
+				<!-- Footer -->
+</div>
+</div>
+</body>
+</html>
