@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login</title>
+</head>
+<body class="parallax" style="background-image: url('https://img.freepik.com/free-photo/flat-lay-desk-concept-with-copy-space_23-2148236810.jpg' ); height: 600%; background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;">
+<form id="registerForm">
+		            <h2 style="text-align: center;">LOGIN</h2><br>
+
+        <div style="display:grid;justify-content: space-evenly;border:10;padding: 10px 30px 10px 35px;">
+        	<div style="border-style: ridge;padding: 40px;">
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required><br><br>
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" name="Password" required><br><br>
+            <div style="display:flex;justify-content: center;">
+                        <button type="button" onclick="login()">Login</button></div>
+        </div>
+        </div>
+    </form>
+</body>
+ <script>
+        function login() {
+            const username = document.getElementById('newUsername').value;
+            const password = document.getElementById('Password').value;
+            if (username && password) {
+                window.location.href = 'table.html';
+            } else {
+                alert('Please enter both username and password.');
+            }
+        }
+    </script>
+</html>
