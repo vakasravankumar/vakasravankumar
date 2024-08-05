@@ -1,0 +1,32 @@
+db.customer.insertMany([
+  {empId: 1, name: 'Clark', dept: 'Sales' },
+  {empId: 2, name: 'Dave', dept: 'Accounting' },
+  {empId: 3, name: 'Ava', dept: 'Sales' }
+]);
+
+db.customer.find({dept: 'Sales'});
+db.customer.updateMany({},{$set:{salary:10000}})
+db.customer.find()
+db.customer.updateOne({dept:'Sales'},{$set:{name:"modiji"}})
+db.customer.find()
+db.customer.updateOne({dept:'Sales'},{$set:{name:"modiji"}})
+db.customer.find()
+db.customer.updateOne({empId:1},{$set:{salary:20000}})
+db.customer.find()
+db.customer.updateOne({empId:3},{$set:{salary:30000}})
+db.customer.find()
+db.customer.find().sort({name:1})
+db.customer.find().limit(3).sort({salary:1})
+db.customer.find().limit(3).sort({salary:-1})
+db.customer.insertMany([
+  {empId: 4, name: 'sara', dept: 'manager' },
+  {empId: 5, name: 'travis', dept: 'Accounting' },
+  {empId: 6, name: 'head', dept: 'ceo' }
+]);
+db.customer.find()
+db.customer.updateMany({},{$set:{address:"itanagar",email:"some@gmail.com"}})
+db.customer.find()
+db.customer.updateMany({empId:1},{$set:{address:"itanagar",email:"some1@gmail.com"}})
+db.customer.updateMany({empId:1},{$set:{address:"itanagar",email:"some1@gmail.com"}})
+
+
