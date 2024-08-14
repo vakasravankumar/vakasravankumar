@@ -1,0 +1,30 @@
+{
+  "name": "mern-project",
+  "version": "1.0.0",
+  "description": "mernstack related project",
+  "main": "serevr.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client"
+  },
+  "keywords": [
+    "client",
+    "server",
+    "json",
+    "express",
+    "mongoose",
+    "cors",
+    "axios",
+    "body-parser"
+  ],
+  "author": "sravan kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "axios": "^1.7.4"
+  }
+}
