@@ -1,121 +1,55 @@
+// server.js
 const express = require('express');
 const mongoose = require('mongoose');
+mongoose.pluralize(null);
 const cors = require('cors');
 
 const app = express();
 
-// Middleware
-app.use(cors());
+app.use (cors());
 app.use(express.json());
 
-// Database connection
-mongoose.connect('mongodb://localhost:27017/merncrud');
+mongoose.connect('mongodb://localhost:27017/merncrud',{
+    //useNewUrlParser: true,
+    //useUnifiedTopology: true,
+});
 
-// Item Schema and Model
 const itemSchema = new mongoose.Schema({
-  empid: { 
-    type: Number,
-    required: true,
-    unique: true 
-  },
-  username: { 
-    type: String,
-    required: true,
-  },
-  age: { 
-    type: Number,
-    required: true,
-  },
-  email: { 
-    type: String,
-    required: true,
-    unique: true, // Assuming email should be unique
-  },
-  address: { 
-    type: String,
-    required: true,
-  },
-  salary: { 
-    type: Number,
-    required: true,
-  }
+    e_id :String,
+    e_name :String,
+    e_age :String,
+    e_email :String,
 });
 
-const Item = mongoose.model('Item', itemSchema);
+const Item = mongoose.model('item',itemSchema);
 
-// Routes
-// Get all items
-app.get('/items', async (req, res) => {
-  try {
+//CRUD operations
+app.get('/items',async(req,res)=>{
     const items = await Item.find();
-    res.json(items);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+    res.send(items);
 });
 
-// Get a specific item by ID
-app.get('/items/:id', async (req, res) => {
-  try {
-    const item = await Item.findById(req.params.id);
-    if (item) {
-      res.json(item);
-    } else {
-      res.status(404).json({ message: 'Item not found' });
-    }
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+app.post('/items',async(req,res)=>{
+    const item = new Item({e_id:req.body.e_id, e_name:req.body.e_name, e_age:req.body.e_age, e_email:req.body.e_email});
+    await item.save();
+    res.send(item);
 });
 
-// Create a new item
-app.post('/items', async (req, res) => {
-  const item = new Item({
-    empid: req.body.empid,
-    username: req.body.username,
-    age: req.body.age,
-    email: req.body.email,
-    address: req.body.address,
-    salary: req.body.salary
-  });
-
-  try {
-    const newItem = await item.save();
-    res.status(201).json(newItem);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
+app.put('/items/:id',async(req,res)=>{
+    const item = await Item.findByIdAndUpdate(req.params.id, req.body,{new:true});
+    res.send(item);
 });
 
-// Update an existing item
-app.put('/items/:id', async (req, res) => {
-  try {
-    const item = await Item.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (item) {
-      res.json(item);
-    } else {
-      res.status(404).json({ message: 'Item not found' });
-    }
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
+app.get('/items/:id',async(req,res)=>{
+    const items = await Item.findOne({_id:req.params.id});
+    res.send(items);
 });
 
-// Delete an item
-app.delete('/items/:id', async (req, res) => {
-  try {
-    const item = await Item.findByIdAndDelete(req.params.id);
-    if (item) {
-      res.json({ message: 'Item deleted' });
-    } else {
-      res.status(404).json({ message: 'Item not found' });
-    }
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+app.delete('/items/:id',async(req,res)=>{
+    await Item.findByIdAndDelete(req.params.id);
+    res.send({message: 'Item deleted'});
 });
 
-// Start server
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
-});
+app.listen(5000,()=>{
+    console.log('Server is running on port 5000');
+}); 
